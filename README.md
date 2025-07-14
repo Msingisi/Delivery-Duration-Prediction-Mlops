@@ -7,6 +7,13 @@
   <p><em>ZenML visualization of the training pipeline DAG</em></p>
 </div>
 
+
+<div align="center">
+  <br/>
+    <img alt="Metrics" src="assets/metrics.png" width="70%">
+  <br/>
+  <p><em>Metrics visualization</em></p>
+</div>
 ## Data Overview
 
 This project uses the [Delivery Duration Prediction dataset](https://platform.stratascratch.com/data-projects/delivery-duration-prediction) from Strata Scratch. The dataset contains:
