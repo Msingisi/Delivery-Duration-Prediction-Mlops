@@ -2,7 +2,7 @@ import logging
 import numpy as np
 import pandas as pd
 from typing import Annotated, Tuple
-from lightgbm import LGBMRegressor
+from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.model_selection import train_test_split
 from zenml import step
@@ -16,7 +16,7 @@ def final_regression_model_step(
     order_place_durations: np.ndarray,
     actual_durations: np.ndarray
 ) -> Tuple[
-    Annotated[LGBMRegressor, "final_model"],
+    Annotated[RandomForestRegressor, "final_model"],
     Annotated[float, "rmse"],
     Annotated[float, "mae"],
     Annotated[float, "r2"],
@@ -35,7 +35,7 @@ def final_regression_model_step(
         X, y, test_size=0.2, random_state=42
     )
 
-    model = LGBMRegressor(random_state=42)
+    model = RandomForestRegressor(random_state=42)
     model.fit(X_train, y_train)
 
     y_pred = model.predict(X_test)
